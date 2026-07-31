@@ -476,41 +476,63 @@ console.log('%c🛠️ Try "sudo" or "ping" in the chat!', 'font-size:14px;color
 console.log('%c📊 7+ Years · .NET Core · React · Angular · Azure', 'font-size:13px;color:#a78bfa;');
 console.log('✨ Made with ❤️ for Fahad Abdullah');
 
-
 // ==========================================================
-// CONTACT FORM - Send to Fahad's Email
+// CONTACT FORM - Mailto (Simple & Working)
 // ==========================================================
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     const successDiv = document.getElementById('formSuccess');
     
-    if (!form) return;
+    if (!form) {
+        console.error('❌ Form not found!');
+        return;
+    }
     
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form values
+        // Get values
         const name = document.getElementById('userName').value.trim();
         const email = document.getElementById('userEmail').value.trim();
         const subject = document.getElementById('userSubject').value.trim() || 'Portfolio Contact';
         const message = document.getElementById('userMessage').value.trim();
         
+        console.log('📝 Form Values:', { name, email, subject, message });
+        
         // Validation
-        if (!name || !email || !message) {
-            alert('⚠️ Please fill in all required fields.');
+        if (!name) {
+            alert('⚠️ Please enter your name.');
+            document.getElementById('userName').focus();
+            return;
+        }
+        
+        if (!email) {
+            alert('⚠️ Please enter your email address.');
+            document.getElementById('userEmail').focus();
             return;
         }
         
         if (!email.includes('@') || !email.includes('.')) {
-            alert('⚠️ Please enter a valid email address.');
+            alert('⚠️ Please enter a valid email address (e.g., name@example.com).');
+            document.getElementById('userEmail').focus();
             return;
         }
         
-        // Create email body
-        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
+        if (!message) {
+            alert('⚠️ Please enter your message.');
+            document.getElementById('userMessage').focus();
+            return;
+        }
         
-        // Open email client with Fahad's email
-        window.open(`mailto:fahad5805@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_blank');
+        // Create mailto link
+        const mailtoLink = `mailto:fahad5805@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\n${message}`
+        )}`;
+        
+        console.log('📧 Opening email client:', mailtoLink);
+        
+        // Open email client
+        window.location.href = mailtoLink;
         
         // Show success message
         successDiv.style.display = 'block';
@@ -527,167 +549,108 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ==========================================================
-// CONTACT FORM - Complete Working (Error Fixed)
+// LAST UPDATED DATE
 // ==========================================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('✅ Contact form script loaded');
-    
-    const form = document.getElementById('contactForm');
-    const successDiv = document.getElementById('formSuccess');
-    const errorDiv = document.getElementById('formError');
-    
-    // Check if form exists
-    if (!form) {
-        console.error('❌ Form not found! Check ID: contactForm');
-        return;
+    const lastUpdated = document.getElementById('lastUpdated');
+    if (lastUpdated) {
+        const date = new Date();
+        lastUpdated.textContent = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
     }
-    
-    // Check if success/error divs exist
-    if (!successDiv || !errorDiv) {
-        console.warn('⚠️ Success/Error divs not found. Creating them...');
-        // Create them if they don't exist
-        const formParent = form.parentNode;
-        if (!successDiv) {
-            const newSuccess = document.createElement('div');
-            newSuccess.id = 'formSuccess';
-            newSuccess.style.cssText = 'display:none;margin-top:16px;padding:12px;background:#22c55e20;border:1px solid #22c55e;border-radius:8px;color:#22c55e;text-align:center;';
-            newSuccess.textContent = '✅ Message sent successfully!';
-            form.appendChild(newSuccess);
-        }
-        if (!errorDiv) {
-            const newError = document.createElement('div');
-            newError.id = 'formError';
-            newError.style.cssText = 'display:none;margin-top:16px;padding:12px;background:#ef444420;border:1px solid #ef4444;border-radius:8px;color:#ef4444;text-align:center;';
-            newError.textContent = '❌ Failed to send message. Please try again.';
-            form.appendChild(newError);
-        }
-    }
-    
-    console.log('✅ Form found, adding event listener...');
-    
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        console.log('📤 Form submitted');
-        
-        // Get form values
-        const name = document.getElementById('userName');
-        const email = document.getElementById('userEmail');
-        const subject = document.getElementById('userSubject');
-        const message = document.getElementById('userMessage');
-        
-        // Check if all fields exist
-        if (!name || !email || !subject || !message) {
-            console.error('❌ One or more fields not found!');
-            alert('⚠️ Form fields missing. Please refresh the page.');
-            return;
-        }
-        
-        // Get values
-        const nameValue = name.value.trim();
-        const emailValue = email.value.trim();
-        const subjectValue = subject.value.trim() || 'Portfolio Contact';
-        const messageValue = message.value.trim();
-        
-        console.log('📝 Form Values:', { nameValue, emailValue, subjectValue, messageValue });
-        
-        // Validation
-        if (!nameValue || !emailValue || !messageValue) {
-            console.log('⚠️ Validation failed: Empty fields');
-            alert('⚠️ Please fill in all required fields.\n\nName, Email, and Message are required.');
-            return;
-        }
-        
-        if (!emailValue.includes('@') || !emailValue.includes('.')) {
-            console.log('⚠️ Validation failed: Invalid email');
-            alert('⚠️ Please enter a valid email address.');
-            return;
-        }
-        
-        console.log('✅ Validation passed');
-        
-        // Prepare payload
-        const payload = {
-            name: nameValue,
-            email: emailValue,
-            message: `Subject: ${subjectValue}\n\n${messageValue}`,
-            interest: "careers"
-        };
-        
-        console.log('📦 Payload:', payload);
-        
-        // Show loading
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-        
-        try {
-            console.log('🌐 Sending to API...');
-            
-            const response = await fetch('https://api.trendsetters-sports.com/email/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(payload)
-            });
-            
-            console.log('📨 Response status:', response.status);
-            
-            // Get success/error divs again (in case they were recreated)
-            const successDiv2 = document.getElementById('formSuccess');
-            const errorDiv2 = document.getElementById('formError');
-            
-            if (response.ok) {
-                console.log('✅ API Success');
-                if (successDiv2) {
-                    successDiv2.style.display = 'block';
-                    successDiv2.textContent = '✅ Message sent successfully!';
-                }
-                if (errorDiv2) {
-                    errorDiv2.style.display = 'none';
-                }
-                form.reset();
-                
-                setTimeout(() => {
-                    if (successDiv2) successDiv2.style.display = 'none';
-                }, 5000);
-            } else {
-                const errorData = await response.text();
-                console.error('❌ API Error:', response.status, errorData);
-                if (errorDiv2) {
-                    errorDiv2.style.display = 'block';
-                    errorDiv2.textContent = `❌ Error ${response.status}: ${errorData || 'Unknown error'}`;
-                }
-                if (successDiv2) {
-                    successDiv2.style.display = 'none';
-                }
-                
-                setTimeout(() => {
-                    if (errorDiv2) errorDiv2.style.display = 'none';
-                }, 5000);
-            }
-        } catch (error) {
-            console.error('❌ Network Error:', error);
-            
-            // Fallback: Open email client
-            const body = `Name: ${nameValue}%0D%0AEmail: ${emailValue}%0D%0A%0D%0A${messageValue}`;
-            window.open(`mailto:fahad5805@gmail.com?subject=${encodeURIComponent(subjectValue)}&body=${body}`, '_blank');
-            
-            const successDiv2 = document.getElementById('formSuccess');
-            if (successDiv2) {
-                successDiv2.textContent = '✅ Email client opened! Please send the email.';
-                successDiv2.style.display = 'block';
-            }
-            form.reset();
-            
-            setTimeout(() => {
-                if (successDiv2) successDiv2.style.display = 'none';
-            }, 5000);
-        } finally {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            console.log('🔄 Form reset complete');
-        }
-    });
 });
+
+// ==========================================================
+// VISITOR COUNTER
+// ==========================================================
+async function getVisitorCount() {
+    try {
+        const response = await fetch('https://api.countapi.xyz/hit/fahad-portfolio/visits');
+        const data = await response.json();
+        console.log(`👁️ Visitors: ${data.value}`);
+        
+        // Display in footer
+        const visitorEl = document.getElementById('visitorCount');
+        if (visitorEl) {
+            visitorEl.textContent = data.value;
+        }
+    } catch (error) {
+        console.log('Visitor counter not available');
+    }
+}
+
+// Call on load
+document.addEventListener('DOMContentLoaded', getVisitorCount);
+
+
+
+
+// ==========================================================
+// GITHUB STATS - JavaScript Version
+// ==========================================================
+async function fetchGitHubStats() {
+    const username = 'Faaddiii'; // Fahad ka GitHub username
+    
+    try {
+        // Fetch user data
+        const userRes = await fetch(`https://api.github.com/users/${username}`);
+        if (!userRes.ok) throw new Error('User not found');
+        const userData = await userRes.json();
+        
+        // Fetch repos
+        const reposRes = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+        const reposData = await reposRes.json();
+        
+        // Calculate stats
+        const totalRepos = userData.public_repos || 0;
+        const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+        const followers = userData.followers || 0;
+        const following = userData.following || 0;
+        
+        // Top languages
+        const languages = {};
+        reposData.forEach(repo => {
+            if (repo.language) {
+                languages[repo.language] = (languages[repo.language] || 0) + 1;
+            }
+        });
+        const sortedLangs = Object.entries(languages)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 6);
+        
+        // Update HTML
+        document.getElementById('githubRepos').textContent = totalRepos;
+        document.getElementById('githubStars').textContent = totalStars;
+        document.getElementById('githubFollowers').textContent = followers;
+        document.getElementById('githubFollowing').textContent = following;
+        
+        // Update languages
+        const langContainer = document.getElementById('githubLangs');
+        if (langContainer) {
+            langContainer.innerHTML = sortedLangs.map(([lang, count]) => 
+                `<span style="display:inline-block;background:var(--surface-light);padding:4px 14px;border-radius:100px;margin:4px;font-size:0.8rem;color:var(--text-muted);border:1px solid var(--border);">
+                    ${lang} (${count})
+                </span>`
+            ).join('');
+        }
+        
+        console.log('✅ GitHub Stats loaded:', { totalRepos, totalStars, followers });
+        
+    } catch (error) {
+        console.error('❌ GitHub API Error:', error);
+        document.getElementById('githubRepos').textContent = '⚠️';
+        document.getElementById('githubStars').textContent = '⚠️';
+        document.getElementById('githubFollowers').textContent = '⚠️';
+        document.getElementById('githubFollowing').textContent = '⚠️';
+        document.getElementById('githubLangs').innerHTML = '<span style="color:var(--text-muted);">⚠️ Unable to load</span>';
+    }
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', fetchGitHubStats);
+
+
+
