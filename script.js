@@ -526,5 +526,168 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-
+// ==========================================================
+// CONTACT FORM - Complete Working (Error Fixed)
+// ==========================================================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ Contact form script loaded');
+    
+    const form = document.getElementById('contactForm');
+    const successDiv = document.getElementById('formSuccess');
+    const errorDiv = document.getElementById('formError');
+    
+    // Check if form exists
+    if (!form) {
+        console.error('❌ Form not found! Check ID: contactForm');
+        return;
+    }
+    
+    // Check if success/error divs exist
+    if (!successDiv || !errorDiv) {
+        console.warn('⚠️ Success/Error divs not found. Creating them...');
+        // Create them if they don't exist
+        const formParent = form.parentNode;
+        if (!successDiv) {
+            const newSuccess = document.createElement('div');
+            newSuccess.id = 'formSuccess';
+            newSuccess.style.cssText = 'display:none;margin-top:16px;padding:12px;background:#22c55e20;border:1px solid #22c55e;border-radius:8px;color:#22c55e;text-align:center;';
+            newSuccess.textContent = '✅ Message sent successfully!';
+            form.appendChild(newSuccess);
+        }
+        if (!errorDiv) {
+            const newError = document.createElement('div');
+            newError.id = 'formError';
+            newError.style.cssText = 'display:none;margin-top:16px;padding:12px;background:#ef444420;border:1px solid #ef4444;border-radius:8px;color:#ef4444;text-align:center;';
+            newError.textContent = '❌ Failed to send message. Please try again.';
+            form.appendChild(newError);
+        }
+    }
+    
+    console.log('✅ Form found, adding event listener...');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        console.log('📤 Form submitted');
+        
+        // Get form values
+        const name = document.getElementById('userName');
+        const email = document.getElementById('userEmail');
+        const subject = document.getElementById('userSubject');
+        const message = document.getElementById('userMessage');
+        
+        // Check if all fields exist
+        if (!name || !email || !subject || !message) {
+            console.error('❌ One or more fields not found!');
+            alert('⚠️ Form fields missing. Please refresh the page.');
+            return;
+        }
+        
+        // Get values
+        const nameValue = name.value.trim();
+        const emailValue = email.value.trim();
+        const subjectValue = subject.value.trim() || 'Portfolio Contact';
+        const messageValue = message.value.trim();
+        
+        console.log('📝 Form Values:', { nameValue, emailValue, subjectValue, messageValue });
+        
+        // Validation
+        if (!nameValue || !emailValue || !messageValue) {
+            console.log('⚠️ Validation failed: Empty fields');
+            alert('⚠️ Please fill in all required fields.\n\nName, Email, and Message are required.');
+            return;
+        }
+        
+        if (!emailValue.includes('@') || !emailValue.includes('.')) {
+            console.log('⚠️ Validation failed: Invalid email');
+            alert('⚠️ Please enter a valid email address.');
+            return;
+        }
+        
+        console.log('✅ Validation passed');
+        
+        // Prepare payload
+        const payload = {
+            name: nameValue,
+            email: emailValue,
+            message: `Subject: ${subjectValue}\n\n${messageValue}`,
+            interest: "careers"
+        };
+        
+        console.log('📦 Payload:', payload);
+        
+        // Show loading
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            console.log('🌐 Sending to API...');
+            
+            const response = await fetch('https://api.trendsetters-sports.com/email/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload)
+            });
+            
+            console.log('📨 Response status:', response.status);
+            
+            // Get success/error divs again (in case they were recreated)
+            const successDiv2 = document.getElementById('formSuccess');
+            const errorDiv2 = document.getElementById('formError');
+            
+            if (response.ok) {
+                console.log('✅ API Success');
+                if (successDiv2) {
+                    successDiv2.style.display = 'block';
+                    successDiv2.textContent = '✅ Message sent successfully!';
+                }
+                if (errorDiv2) {
+                    errorDiv2.style.display = 'none';
+                }
+                form.reset();
+                
+                setTimeout(() => {
+                    if (successDiv2) successDiv2.style.display = 'none';
+                }, 5000);
+            } else {
+                const errorData = await response.text();
+                console.error('❌ API Error:', response.status, errorData);
+                if (errorDiv2) {
+                    errorDiv2.style.display = 'block';
+                    errorDiv2.textContent = `❌ Error ${response.status}: ${errorData || 'Unknown error'}`;
+                }
+                if (successDiv2) {
+                    successDiv2.style.display = 'none';
+                }
+                
+                setTimeout(() => {
+                    if (errorDiv2) errorDiv2.style.display = 'none';
+                }, 5000);
+            }
+        } catch (error) {
+            console.error('❌ Network Error:', error);
+            
+            // Fallback: Open email client
+            const body = `Name: ${nameValue}%0D%0AEmail: ${emailValue}%0D%0A%0D%0A${messageValue}`;
+            window.open(`mailto:fahad5805@gmail.com?subject=${encodeURIComponent(subjectValue)}&body=${body}`, '_blank');
+            
+            const successDiv2 = document.getElementById('formSuccess');
+            if (successDiv2) {
+                successDiv2.textContent = '✅ Email client opened! Please send the email.';
+                successDiv2.style.display = 'block';
+            }
+            form.reset();
+            
+            setTimeout(() => {
+                if (successDiv2) successDiv2.style.display = 'none';
+            }, 5000);
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            console.log('🔄 Form reset complete');
+        }
+    });
+});

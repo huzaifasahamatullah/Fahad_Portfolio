@@ -49,12 +49,7 @@
         <a href="https://github.com/Faaddiii" target="_blank" aria-label="GitHub">
             <i class="fab fa-github"></i>
         </a>
-        <a href="#" target="_blank" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" target="_blank" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
+        
     </div>
 
     <!-- ===== BACK TO TOP ===== -->
@@ -577,7 +572,7 @@
         </section>
 
         <!-- ========== CONTACT ========== -->
-        <section id="contact">
+      <section id="contact">
     <h2 class="section-title reveal">Get in <span class="accent">Touch</span></h2>
     <p class="section-sub reveal">Let's build something great together.</p>
     <div class="section-divider reveal"></div>
@@ -609,22 +604,13 @@
             </div>
 
             <div class="social-links">
-                <a href="https://linkedin.com/in/fahad-a-955178a8" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Faaddiii" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                <a href="https://linkedin.com/in/fahad-a-955178a8" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
 
-        <!-- ✅ UPDATED FORM -->
+        <!-- ✅ COMPLETE FORM WITH ALL DIVS -->
         <form class="contact-form" id="contactForm">
             <input type="text" id="userName" placeholder="Your name" required />
             <input type="email" id="userEmail" placeholder="Your email" required />
@@ -637,7 +623,12 @@
 
             <!-- Success Message -->
             <div id="formSuccess" style="display:none;margin-top:16px;padding:12px;background:#22c55e20;border:1px solid #22c55e;border-radius:8px;color:#22c55e;text-align:center;">
-                ✅ Email client opened! Please send the email.
+                ✅ Message sent successfully!
+            </div>
+            
+            <!-- Error Message -->
+            <div id="formError" style="display:none;margin-top:16px;padding:12px;background:#ef444420;border:1px solid #ef4444;border-radius:8px;color:#ef4444;text-align:center;">
+                ❌ Failed to send message. Please try again.
             </div>
         </form>
     </div>
