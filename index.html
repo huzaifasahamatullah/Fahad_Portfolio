@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahad Abdullah · Senior .NET Full Stack Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== SCROLL PROGRESS BAR ===== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ===== MOUSE TRAILER ===== -->
+    <div class="mouse-trailer" id="mouseTrailer"></div>
+
+    <!-- ===== ANIMATED BACKGROUND ===== -->
+    <div class="bg-glow"></div>
+
+    <!-- ===== PARTICLES ===== -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- ===== FLOATING SOCIAL BAR ===== -->
+    <div class="floating-social">
+        <a href="https://linkedin.com/in/fahad-a-955178a8" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="container">
+
+        <!-- ========== HEADER ========== -->
+        <header class="header reveal">
+            <div class="logo">
+                FA<span>.</span><span class="cursor-blink"></span>
+            </div>
+            <div class="header-actions">
+                <div class="greeting" id="greeting">
+                    <span class="emoji">🌅</span>
+                    <span id="greetingText">Good Morning!</span>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <nav class="nav">
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact" class="btn-outline">Let's Talk</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ========== HERO ========== -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="badge reveal">✦ Senior .NET Full Stack Developer</div>
+                <h1 class="reveal">
+                    Hi, I'm <br />
+                    <span class="highlight">Fahad Abdullah</span>
+                </h1>
+                <div class="typewriter reveal" id="typewriter">
+                    <span id="typed-text"></span><span class="cursor"></span>
+                </div>
+                <p class="hero-description reveal">
+                    7+ years of experience delivering scalable web, desktop, and cloud-ready solutions.
+                    ASP.NET Core · C# · React · Angular · Node.js · Azure
+                </p>
+
+                <div class="hero-contact reveal">
+                    <span><i class="fas fa-phone"></i> +92 312 4549028</span>
+                    <span><i class="fas fa-envelope"></i> fahad5805@gmail.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</span>
+                </div>
+
+                <div class="tech-stack stagger reveal">
+                    <span class="chip">ASP.NET Core</span>
+                    <span class="chip">C#</span>
+                    <span class="chip">React</span>
+                    <span class="chip">Angular</span>
+                    <span class="chip">Node.js</span>
+                    <span class="chip">Azure</span>
+                    <span class="chip">SQL Server</span>
+                    <span class="chip">Entity Framework</span>
+                </div>
+
+                <div class="cta-group reveal">
+                    <a href="#projects" class="btn-primary">
+                        <i class="fas fa-arrow-down"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+       <a href="assets/Fahad_Abdullah_CV.pdf" download="Fahad_Abdullah_CV.pdf" class="btn-secondary btn-download">
+    <i class="fas fa-file-pdf"></i> Download CV
+</a>
+                </div>
+            </div>
+
+            <div class="hero-image reveal-scale">
+                <div class="profile-wrapper" id="profileWrapper">
+                    <div class="profile-ring"></div>
+                    <div class="profile-image">
+                        <span class="emoji-avatar">👨‍💻</span>
+                        <span class="status-dot"></span>
+                    </div>
+                    <span class="profile-badge">🚀 Available</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== STATS ========== -->
+        <div class="stats-grid reveal">
+            <div class="stat-item">
+                <span class="stat-number" data-count="7">0</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="30">0</span>
+                <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="40">0</span>
+                <span class="stat-label">Client Onboarding Speed ↑</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="25">0</span>
+                <span class="stat-label">API Response Time ↓</span>
+            </div>
+        </div>
+
+        <!-- ========== SUMMARY ========== -->
+        <section id="summary" class="summary-section">
+            <h2 class="section-title reveal">Professional <span class="accent">Summary</span></h2>
+            <div class="section-divider reveal"></div>
+            <div class="summary-card reveal-scale">
+                <p>
+                    Senior .NET Full Stack Developer with <strong>7+ years</strong> of experience delivering scalable web, desktop,
+                    and cloud-ready solutions across dispatch, onboarding, hospitality, payments, reporting, and enterprise
+                    integration domains. Strong expertise in <strong>ASP.NET Core, C#, REST APIs, Entity Framework, SQL,
+                    React, Angular, Azure Functions</strong>, and secure third-party integrations.
+                </p>
+                <div class="summary-highlights">
+                    <span>✅ 40% faster client onboarding</span>
+                    <span>✅ 30% backend efficiency improvement</span>
+                    <span>✅ 25% API response time reduction</span>
+                    <span>✅ 15% shorter sprint cycles</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== EXPERIENCE ========== -->
+        <section id="experience">
+            <h2 class="section-title reveal">Work <span class="accent">Experience</span></h2>
+            <p class="section-sub reveal">My professional journey so far.</p>
+            <div class="section-divider reveal"></div>
+
+            <div class="exp-timeline">
+
+                <!-- Experience 1 -->
+                <div class="exp-item reveal-left">
+                    <div class="exp-left">
+                        <div class="exp-date">Jan 2025 – Present</div>
+                        <div class="exp-company">Salnad</div>
+                        <div class="exp-location">Karachi, Pakistan</div>
+                    </div>
+                    <div class="exp-right">
+                        <h4>Senior Software Developer</h4>
+                        <p>Leading development of client onboarding platforms and enterprise solutions.</p>
+                        <ul class="exp-achievements">
+                            <li>Led development of client onboarding platforms v1 and v2 using ASP.NET Core, C#, React.js, and scalable REST APIs</li>
+                            <li>Improved client onboarding speed by <strong>40%</strong> by redesigning workflow logic and API interactions</li>
+                            <li>Built WPF applications for NSSR client reporting and notifications</li>
+                            <li>Reduced API response time by <strong>25%</strong> through backend refactoring and query optimization</li>
+                            <li>Worked with stakeholders to translate operational requirements into maintainable software features</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="exp-item reveal-left" style="transition-delay:0.1s">
+                    <div class="exp-left">
+                        <div class="exp-date">Jul 2023 – Oct 2024</div>
+                        <div class="exp-company">Astrik Digital</div>
+                        <div class="exp-location">Remote</div>
+                    </div>
+                    <div class="exp-right">
+                        <h4>Senior .NET Developer</h4>
+                        <p>Created LMS Applications, CRMs, Lead management and Book Publishing Software.</p>
+                        <ul class="exp-achievements">
+                            <li>Led the team and project coordination with manager and Product team</li>
+                            <li>Developed comprehensive LMS and CRM solutions</li>
+                            <li>Implemented book publishing software with digital workflows</li>
+                            <li><strong>30%</strong> improvement in backend efficiency through .NET Core optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="exp-item reveal-left" style="transition-delay:0.2s">
+                    <div class="exp-left">
+                        <div class="exp-date">Jan 2021 – Jul 2023</div>
+                        <div class="exp-company">M3 Technologies</div>
+                        <div class="exp-location">Karachi, Pakistan</div>
+                    </div>
+                    <div class="exp-right">
+                        <h4>Software Engineer</h4>
+                        <p>Full-stack development of DevOps systems and hotel management platforms.</p>
+                        <ul class="exp-achievements">
+                            <li>Built DevOps systems and hotel management platforms using .NET Core and Angular</li>
+                            <li>Integrated Angular frontend modules with backend APIs</li>
+                            <li>Supported enterprise application maintenance and sprint delivery</li>
+                            <li>Collaborated with distributed teams using Jira and Bitbucket</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="exp-item reveal-left" style="transition-delay:0.3s">
+                    <div class="exp-left">
+                        <div class="exp-date">Jan 2019 – Oct 2020</div>
+                        <div class="exp-company">Viftech Solutions Pvt. Ltd.</div>
+                        <div class="exp-location">New York, USA (Remote)</div>
+                    </div>
+                    <div class="exp-right">
+                        <h4>Junior .NET Developer</h4>
+                        <p>Developed and maintained complex ASP.NET Web Forms and MVC applications.</p>
+                        <ul class="exp-achievements">
+                            <li>Built applications with QuickBooks integrations and dynamic user interfaces</li>
+                            <li>Created reusable SPA components and JavaScript functionality</li>
+                            <li>Implemented robust LINQ queries and database interactions</li>
+                            <li>Assisted with debugging and feature delivery across multiple client projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== PROJECTS ========== -->
+        <section id="projects">
+            <h2 class="section-title reveal">Featured <span class="accent">Projects</span></h2>
+            <p class="section-sub reveal">Some of the impactful solutions I've built.</p>
+            <div class="section-divider reveal"></div>
+
+            <div class="project-filters reveal">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="web">Web Apps</button>
+                <button data-filter="desktop">Desktop</button>
+                <button data-filter="cloud">Cloud</button>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card reveal-scale" data-category="web">
+                    <div class="project-icon"><i class="fas fa-book-open"></i></div>
+                    <span class="project-type">Web Application</span>
+                    <h3>Digital Publishing & eBook Platform</h3>
+                    <div class="project-tags">
+                        <span>ASP.NET Core</span>
+                        <span>React/Vite</span>
+                        <span>SQL Server</span>
+                        <span>AWS S3/CDN</span>
+                    </div>
+                    <p>
+                        Multi-step publisher workflow covering manuscript upload, cover validation, preview,
+                        sample generation, content checks, and publishing. Built with ASP.NET Core APIs,
+                        React/Vite interfaces, and secure AWS S3 asset delivery.
+                    </p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal-scale" style="transition-delay:0.1s" data-category="web">
+                    <div class="project-icon"><i class="fas fa-users"></i></div>
+                    <span class="project-type">Web Application</span>
+                    <h3>Client Onboarding Platform v2</h3>
+                    <div class="project-tags">
+                        <span>ASP.NET Core</span>
+                        <span>React.js</span>
+                        <span>Entity Framework</span>
+                        <span>Azure</span>
+                    </div>
+                    <p>
+                        Complete client onboarding solution with workflow redesign, API optimization,
+                        and improved user-facing processes. Achieved <strong>40% faster</strong> onboarding speed.
+                    </p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal-scale" style="transition-delay:0.2s" data-category="desktop">
+                    <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
+                    <span class="project-type">Desktop Application</span>
+                    <h3>NSSR Client Reporting System</h3>
+                    <div class="project-tags">
+                        <span>WPF</span>
+                        <span>DevExpress</span>
+                        <span>RDLC Reports</span>
+                        <span>Azure Functions</span>
+                    </div>
+                    <p>
+                        Desktop application for client reporting and notifications with real-time data
+                        visualization, automated report generation, and cloud integration.
+                    </p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal-scale" style="transition-delay:0.3s" data-category="cloud">
+                    <div class="project-icon"><i class="fas fa-cloud"></i></div>
+                    <span class="project-type">Cloud Solution</span>
+                    <h3>Azure Function Integration Suite</h3>
+                    <div class="project-tags">
+                        <span>Azure Functions</span>
+                        <span>C#</span>
+                        <span>Stripe API</span>
+                        <span>SignalR</span>
+                    </div>
+                    <p>
+                        Serverless integration suite with payment processing, real-time notifications,
+                        and secure third-party API integrations using Azure Functions and SignalR.
+                    </p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== SKILLS ========== -->
+        <section id="skills">
+            <h2 class="section-title reveal">Technical <span class="accent">Expertise</span></h2>
+            <p class="section-sub reveal">Core technologies and tools I work with.</p>
+            <div class="section-divider reveal"></div>
+
+            <!-- Skill Categories -->
+            <div class="skill-categories stagger reveal">
+                <div class="skill-category">
+                    <h4><i class="fas fa-server"></i> Backend & Architecture</h4>
+                    <div class="skill-tags">
+                        <span>C#</span>
+                        <span>.NET Framework</span>
+                        <span>.NET Core</span>
+                        <span>ASP.NET Core</span>
+                        <span>Web API</span>
+                        <span>MVC</span>
+                        <span>Web Forms</span>
+                        <span>Entity Framework</span>
+                        <span>ADO.NET</span>
+                        <span>LINQ</span>
+                        <span>CQRS</span>
+                        <span>DDD</span>
+                        <span>OOP</span>
+                        <span>TDD</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-cloud"></i> Cloud & Integration</h4>
+                    <div class="skill-tags">
+                        <span>Azure</span>
+                        <span>Azure Functions</span>
+                        <span>Firebase</span>
+                        <span>Stripe</span>
+                        <span>JWT</span>
+                        <span>SignalR</span>
+                        <span>AWS S3</span>
+                        <span>CDN</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-code"></i> Frontend</h4>
+                    <div class="skill-tags">
+                        <span>React.js</span>
+                        <span>Angular</span>
+                        <span>JavaScript</span>
+                        <span>SPA Architecture</span>
+                        <span>Vite</span>
+                        <span>Responsive UI</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-database"></i> Data & Caching</h4>
+                    <div class="skill-tags">
+                        <span>SQL Server</span>
+                        <span>PostgreSQL</span>
+                        <span>Redis</span>
+                        <span>Query Optimization</span>
+                        <span>Stored Procedures</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-desktop"></i> Desktop & Reporting</h4>
+                    <div class="skill-tags">
+                        <span>WPF</span>
+                        <span>WinForms</span>
+                        <span>DevExpress</span>
+                        <span>RDLC Reports</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-tools"></i> Engineering Practices</h4>
+                    <div class="skill-tags">
+                        <span>API Design</span>
+                        <span>Performance Optimization</span>
+                        <span>Clean Coding</span>
+                        <span>Debugging</span>
+                        <span>Code Reviews</span>
+                        <span>Scalable Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-code-branch"></i> Delivery & Collaboration</h4>
+                    <div class="skill-tags">
+                        <span>GitHub</span>
+                        <span>Bitbucket</span>
+                        <span>Jira</span>
+                        <span>Confluence</span>
+                        <span>TortoiseSVN</span>
+                        <span>Agile/Scrum</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Progress Bars -->
+            <div class="skills-container stagger reveal" style="margin-top:40px;">
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name"><i class="fas fa-code"></i> C# / .NET Core</span>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="95"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name"><i class="fas fa-database"></i> SQL Server</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name"><i class="fab fa-react"></i> React.js</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name"><i class="fab fa-angular"></i> Angular</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name"><i class="fab fa-node"></i> Node.js</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name"><i class="fas fa-cloud"></i> Azure</span>
+                        <span class="skill-percent">78%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="78"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TESTIMONIALS ========== -->
+        <section id="testimonials">
+            <h2 class="section-title reveal">What People <span class="accent">Say</span></h2>
+            <p class="section-sub reveal">Kind words from colleagues and clients.</p>
+            <div class="section-divider reveal"></div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal-scale">
+                    <div class="quote">Fahad is an exceptional .NET developer. His ability to architect scalable solutions and optimize performance is outstanding. He delivered our onboarding platform 6 weeks ahead of schedule.</div>
+                    <div class="author">
+                        <div class="author-avatar">AK</div>
+                        <div class="author-info">
+                            <div class="name">Ahmed Khan</div>
+                            <div class="role">CTO, Salnad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal-scale" style="transition-delay:0.1s">
+                    <div class="quote">Working with Fahad on the hotel management platform was a great experience. His Angular and .NET Core expertise made the integration seamless. Highly professional and reliable.</div>
+                    <div class="author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <div class="name">Maria Rodriguez</div>
+                            <div class="role">Product Manager, M3 Technologies</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal-scale" style="transition-delay:0.2s">
+                    <div class="quote">Fahad's work on our LMS and CRM systems was phenomenal. He led the team effectively and delivered features that our clients absolutely love. A true full-stack expert.</div>
+                    <div class="author">
+                        <div class="author-avatar">SA</div>
+                        <div class="author-info">
+                            <div class="name">Sara Ahmed</div>
+                            <div class="role">CEO, Astrik Digital</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section id="contact">
+    <h2 class="section-title reveal">Get in <span class="accent">Touch</span></h2>
+    <p class="section-sub reveal">Let's build something great together.</p>
+    <div class="section-divider reveal"></div>
+
+    <div class="contact-wrap reveal-scale">
+        <div class="contact-info">
+            <h3>Let's connect.</h3>
+            <p>
+                I'm always open to new opportunities, collaborations,
+                or just a good tech chat. Reach out and I'll get back
+                to you within 24 hours.
+            </p>
+
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <span>fahad5805@gmail.com</span>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <span>+92 312 4549028</span>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone-alt"></i>
+                <span>+92 305 2351635</span>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Karachi, Pakistan</span>
+            </div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/fahad-a-955178a8" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- ✅ UPDATED FORM -->
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="userName" placeholder="Your name" required />
+            <input type="email" id="userEmail" placeholder="Your email" required />
+            <input type="text" id="userSubject" placeholder="Subject" />
+            <textarea id="userMessage" placeholder="Tell me about your project..." required></textarea>
+            
+            <button type="submit" class="btn-primary">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+
+            <!-- Success Message -->
+            <div id="formSuccess" style="display:none;margin-top:16px;padding:12px;background:#22c55e20;border:1px solid #22c55e;border-radius:8px;color:#22c55e;text-align:center;">
+                ✅ Email client opened! Please send the email.
+            </div>
+        </form>
+    </div>
+</section>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="footer reveal">
+            <p>
+                &copy; 2026 <span>Fahad Abdullah</span> · Senior .NET Full Stack Developer
+            </p>
+            <p style="font-size:0.75rem;margin-top:8px;color:var(--text-muted);">
+                <i class="fas fa-code"></i> ASP.NET Core · C# · React · Angular · Node.js · Azure
+                <span style="margin:0 8px;">·</span>
+                🚀 Open to opportunities
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- ===== AI CHAT WIDGET ===== -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chatToggle" aria-label="Chat with AI">
+            <i class="fas fa-comment-dots"></i>
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <div class="avatar">AI</div>
+                <div>
+                    <div style="font-weight:600;font-size:0.9rem;">Fahad's Assistant</div>
+                    <div class="status">
+                        <span class="dot"></span> Online
+                    </div>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    👋 Hi! I'm Fahad's AI assistant. Ask me about his skills, projects, experience, or anything else!
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Ask me anything..." />
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CUSTOM JAVASCRIPT ===== -->
+    <script src="script.js"></script>
+
+</body>
+</html>
